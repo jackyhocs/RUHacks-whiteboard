@@ -1,4 +1,6 @@
 var canvas = document.getElementById('drawCanvas');
+var canvasButton = document.getElementById('clearCanvas');
+var changeBrush = document.getElementById('changeBrush');
 var ctx = canvas.getContext('2d');
 
 // create a flag
@@ -40,8 +42,29 @@ function endDraw(e) {
     plots=[];
 }
 
+function clearCanvas(e) {
+    ctx.fillRect(0,0,800,600);
+}
+
+function changeColor() {
+    console.log(ctx.strokeStyle);
+    if(ctx.strokeStyle == "#ffffff") {
+        console.log("erase");
+        document.getElementById('changeBrush').textContent = "Erase";
+        ctx.strokeStyle = "#000000";
+    } else {
+        console.log("draw");
+        document.getElementById('changeBrush').textContent = "Draw";
+        ctx.strokeStyle = "#ffffff";
+    }
+}
+
 ctx.lineWidth = '3';
+ctx.fillStyle = "#ffffff";
+ctx.strokeStyle = "#000000";
 
 canvas.addEventListener('mousedown', startDraw, false);
 canvas.addEventListener('mousemove', draw, false);
 canvas.addEventListener('mouseup', endDraw, false);
+canvasButton.addEventListener('click', clearCanvas);
+changeBrush.addEventListener('onmouseup', changeColor);
