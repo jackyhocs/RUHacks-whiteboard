@@ -59,8 +59,29 @@ function changeColor() {
     }
 }
 
+function initialColour(colour) {
+    console.log(colour);
+    switch(typeof colour) {
+        case "red":
+            ctx.strokeStyle = "#ff0000";
+            break;
+        case "orange":
+            ctx.strokeStyle = "#ff7600";
+            break;
+        case "yellow":
+            ctx.strokeStyle = "#fffB00";
+            break;
+        case "cyan":
+            ctx.strokeStyle = "#00ffeb";
+            break;
+        case "blue":
+            ctx.strokeStyle = "#0800ff";
+            break;
+    }
+}
+
 ctx.lineWidth = '3';
-ctx.fillStyle = "#ffffff";
+ctx.fillStyle = "#fffB00";
 ctx.strokeStyle = "#000000";
 
 canvas.addEventListener('mousedown', startDraw, false);
