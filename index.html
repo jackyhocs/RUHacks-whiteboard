@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <head>
+        <h1>Drawing thing</h1>
+    </head>
+
+    <body style="width:100%; text-align:center" >
+        <canvas id="drawCanvas" width="1000" height="600" display="inline"></canvas>
+        <br>
+        <br>
+        
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="changeBrush" onclick="changeColor()" >Erase</button>
+        
+        
+        <!-- Right aligned menu below button -->
+        <button id="size"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Size</button>
+        
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect"
+            for="size">
+            <li onclick="changeSize('small')" class="mdl-menu__item">Small</li>
+            <li onclick="changeSize('medium')" class="mdl-menu__item">Medium</li>
+            <li onclick="changeSize('large')" class="mdl-menu__item">Large</li>
+        </ul>
+        
+         <!-- Right aligned menu below button -->
+        <button id="colour"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Change Colour</button>
+        
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect"
+            for="colour">
+            <li onclick="changeColour('red')" class="mdl-menu__item">Red</li>
+            <li onclick="changeColour('orange')" class="mdl-menu__item">Orange</li>
+            <li onclick="changeColour('yellow')" class="mdl-menu__item">Yellow</li>
+            <li onclick="changeColour('cyan')" class="mdl-menu__item">Cyan</li>
+            <li onclick="changeColour('blue')" class="mdl-menu__item">Blue</li>
+        </ul>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="clearCanvas" onclick="clearCanvas()" >Clear</button>
+    </body>
+    <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+    <script type="text/javascript">
+        var PUBNUB_demo = PUBNUB.init({
+            publish_key: 'pub-c-322f1648-4777-4661-8d79-3beaa73059a9',
+            subscribe_key: 'sub-c-8daa3c1e-0b83-11e7-b34d-02ee2ddab7fe'
+        });
+    </script>
+        
+    <script src="javascript/canvas.js"></script>
+
+</html>
+   
