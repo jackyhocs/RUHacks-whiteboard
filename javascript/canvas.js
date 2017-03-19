@@ -57,7 +57,7 @@ function draw(e) {
 
     plots.push({x: x, y: y});
 
-    drawOnCanvas(plots);
+    drawOnCanvas(currentWidth,currentColour,plots);
 }
 
 function endDraw(e) {
